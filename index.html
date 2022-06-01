@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <main>
+      <div class="calc-container">
+        <!-- TITLE -->
+        <h1 class="title text">tip calculator</h1>
+        <!-- FORM CONTAINER -->
+        <div class="form-container">
+          <!-- FORM -->
+          <form class="form">
+            <!-- original bill -->
+            <h3 class="text">bill:</h3>
+            <input class="input" type="number" step=".01" />
+            <button class="btn" type="button">submit</button>
+            <input class="slider" type="range" />Tip:
+            <span id="tip-percent">50%</span>
+          </form>
+        </div>
+        <!-- END OF FORM -->
+        <!-- RESULTS -->
+        <section class="result-section">
+          <h2 class="result text">results</h2>
+          <!-- tip -->
+          <div class="tip-amount text">tip amount: <span id="tip">$</span></div>
+          <!-- total bill -->
+          <div class="total text">total bill: <span id="bill">$</span></div>
+        </section>
+      </div>
+    </main>
+  </body>
+  <script src="./app.js"></script>
+</html>
