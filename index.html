@@ -8,30 +8,53 @@
     <title>Tip Calculator</title>
   </head>
   <body>
+    <h1 class="title">tip calculator</h1>
     <main>
       <div class="calc-container">
         <!-- TITLE -->
-        <h1 class="title text">tip calculator</h1>
         <!-- FORM CONTAINER -->
         <div class="form-container">
           <!-- FORM -->
           <form class="form">
             <!-- original bill -->
-            <h3 class="text">bill:</h3>
-            <input class="input" type="number" step=".01" />
-            <button class="btn" type="button">submit</button>
-            <input class="slider" type="range" />Tip:
-            <span id="tip-percent">50%</span>
+            <label>bill</label>
+            <input class="input bill" type="number" step=".01" />
+            <label>select tip %</label>
+            <div class="btns-container">
+                <button type="button" class="tip-percent" data-status="">5%</button>
+                <button type="button" class="tip-percent" data-status="">10%</button>
+                <button type="button" class="tip-percent" data-status="">15%</button>
+                <button type="button" class="tip-percent" data-status="">25%</button>
+                <button type="button" class="tip-percent" data-status="">50%</button>
+                <input type="number" placeholder="Custom" class="tip-percent input custom"></input>
+            </div>
+            <div class="people">
+              <div class="label-container">
+                <label class="label">number of people</label>
+                <!-- <label class="other-label">can't be zero</label> -->
+              </div>
+              <input type="number" class="input split"></input>
+            </div>
           </form>
         </div>
         <!-- END OF FORM -->
         <!-- RESULTS -->
         <section class="result-section">
-          <h2 class="result text">results</h2>
-          <!-- tip -->
-          <div class="tip-amount text">tip amount: <span id="tip">$</span></div>
-          <!-- total bill -->
-          <div class="total text">total bill: <span id="bill">$</span></div>
+          <div class="result-container">
+            <!-- tip -->
+            <div class="tip-container">
+              <div class="amount-container">
+                <h3 class="tip-amount">tip amount<span class="person">/ person</span></h3>
+                <div class="currency tip">$0.00</div>
+              </div>
+              <!-- total bill -->
+              <div class="amount-container">
+                <h3 class="total">total<span class="person">/ person</span></h3>
+                <div class="currency total-bill"></div>
+              </div>
+            </div>
+            <button class="btn">reset</button>
+          </div>
         </section>
       </div>
     </main>

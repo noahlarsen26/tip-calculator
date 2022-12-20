@@ -1,59 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 /* BODY */
 body {
-  background: #292929;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(186, 14%, 43%);
+  text-transform: capitalize;
+}
+.title {
+  text-align: center;
+  color: hsl(186, 14%, 43%);
 }
 /* CALCULATOR */
 main {
-  background: white;
+  background: hsl(0, 0%, 100%);
+  position: relative;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
+  height: 25rem;
+  width: 50rem;
 }
 /* CONTAINER */
 .calc-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 299px;
-  min-width: 300px;
-}
-/* ALL TEXT */
-.text {
-  text-transform: capitalize;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 90%;
+  width: 90%;
 }
 
-.form {
-  text-align: center;
+.form-container {
+  width: 50%;
 }
-h3 {
-  display: inline;
+.form {
+  height: 100%;
+}
+label {
+  font-size: 16px;
+  display: block;
+}
+
+.input {
+  height: 2rem;
+  display: block;
+  width: calc(100% - 1rem);
+  background: hsl(189, 41%, 97%);
+  border: none;
+  border-radius: 5px;
+  font-family: "Space Mono", monospace;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  color: hsl(183, 100%, 15%);
+  font-size: 20px;
+  font-weight: 700;
 }
 h2 {
   text-decoration: underline;
   margin-bottom: 0.5rem;
   text-align: center;
 }
-.tip-amount,
-.total {
-  font-size: 20px;
-}
+
 /* BUTTON */
-.btn {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: white;
+.btns-container {
+  height: 6rem;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+}
+
+.tip-percent {
+  height: 2.5rem;
+  width: 6.5rem;
+  border-radius: 5px;
+  background: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
   border: none;
-  font-size: 0.9rem;
-  background: #3070c5;
-  text-transform: capitalize;
+  font-family: "Space Mono", monospace;
+  font-size: 20px;
+  font-weight: 700;
   cursor: pointer;
 }
-/* SLIDER */
-.slider {
+.tip-percent:hover {
+  background: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+}
+
+[data-status="active"] {
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+::placeholder {
+  color: hsl(186, 14%, 43%);
+}
+
+.custom {
+  transform: translateY(-20%);
+  background: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+}
+.people {
+  margin-top: 1.5rem;
+}
+
+.result-section {
+  position: relative;
+  width: 50%;
+  background: hsl(183, 100%, 15%);
+  border-radius: 15px;
+}
+.result-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.amount-container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+}
+h3 {
+  color: hsl(189, 41%, 97%);
+  font-size: 12px;
+}
+.person {
   display: block;
-  margin: 0.5rem auto;
-  width: 17rem;
+  text-transform: lowercase;
+  color: hsl(184, 14%, 56%);
+}
+.currency {
+  color: hsl(172, 67%, 45%);
+  width: 50%;
+  font-size: 35px;
+  text-align: end;
+}
+
+.btn {
+  color: hsl(183, 100%, 15%);
+  border: none;
+  background: hsl(172, 67%, 45%);
+  text-transform: capitalize;
+  cursor: pointer;
+  width: 100%;
+  height: 2.5rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn:hover {
+  background: hsl(185, 41%, 84%);
+}
+input:focus {
+  outline: none;
+  border: solid 2.25px hsl(172, 67%, 45%);
+}
+.label-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.other-label {
+  color: hsl(355, 50%, 54%);
+}
+@media screen and (max-width: 810px) {
+  h1 {
+    font-size: 30px;
+  }
+  main {
+    height: 35rem;
+    width: 20rem;
+    padding-bottom: 3rem;
+  }
+  .calc-container {
+    flex-direction: column;
+    justify-content: initial;
+    height: 95%;
+  }
+  .form-container {
+    width: 100%;
+    height: 60%;
+  }
+  .result-section {
+    width: 100%;
+    height: 15rem;
+  }
+  .btns-container {
+    margin-top: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+    height: 9rem;
+  }
+  .people {
+    margin-top: 10px;
+  }
+  .input:first-of-type {
+    margin-bottom: 1rem;
+  }
 }
